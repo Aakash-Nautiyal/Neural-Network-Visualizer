@@ -1,0 +1,432 @@
+/* ==================================================================
+   SLEEK TEAL THEME – refreshed for vertical param layout
+   ================================================================== */
+:root {
+  /* colours */
+  --menu-w: 280px;
+  --clr-bg-1: #0f1925;
+  --clr-bg-2: #162330;
+  --clr-card: #1c2a3a;
+  --clr-border: #28384d;
+  --clr-text: #e5f0ff;
+  --clr-accent: #20e3b2;
+  --clr-accent-dark: #17c89e;
+  /* misc */
+  --radius: 0.7rem;
+  --glow: 0 0 6px rgba(32, 227, 178, .45);
+}
+
+/* ---------- base sidebar ---------- */
+.side-menu {
+  width: var(--menu-w);
+  flex: 0 0 var(--menu-w);
+  height: 100vh;
+  overflow-y: auto;
+  padding: 1.4rem 1.1rem;
+  box-sizing: border-box;
+  background: linear-gradient(180deg, var(--clr-bg-1), var(--clr-bg-2));
+  border-left: 1px solid var(--clr-border);
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+  font-family: Inter, system-ui, sans-serif;
+  color: var(--clr-text);
+  position: relative;
+  z-index: 10;
+}
+
+/* ---------- headings ---------- */
+.side-menu h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600
+}
+
+.side-section h4 {
+  margin: 0 0 .45rem;
+  font: 600 .9rem/1 Inter;
+  text-transform: uppercase;
+  letter-spacing: .05em
+}
+
+.side-section p,
+label {
+  font-size: .85rem;
+  line-height: 1.3
+}
+
+/* ---------- dark number fields (global) ---------- */
+.side-menu input[type=number] {
+  width: 70px;
+  padding: .28rem .4rem;
+  border-radius: .35rem;
+  border: 1px solid var(--clr-border);
+  background: #0e1825;
+  color: var(--clr-text);
+  text-align: center;
+  font-size: .85rem;
+  appearance: textfield;
+}
+
+.side-menu input[type=number]:focus {
+  outline: none;
+  border-color: var(--clr-accent);
+  box-shadow: 0 0 0 2px rgba(32, 227, 178, .35);
+}
+
+/* ---------- buttons ---------- */
+.side-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: .45rem;
+  margin-top: 10px;
+  padding: .22rem .66rem;
+  border: 1px solid var(--clr-accent);
+  border-radius: .45rem;
+  background: var(--clr-accent);
+  color: #012218;
+  font-size: .9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .15s, box-shadow .2s;
+}
+
+.side-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: var(--glow)
+}
+
+.side-btn:disabled {
+  opacity: .38;
+  cursor: default
+}
+
+.side-btn--ghost {
+  background: transparent;
+  color: var(--clr-accent)
+}
+
+.side-btn--ghost:hover:not(:disabled) {
+  background: rgba(32, 227, 178, .1);
+  box-shadow: none
+}
+
+/* ---------- vertical x1 x2 x3 list ---------- */
+.input-values {
+  display: flex;
+  flex-direction: column;
+  gap: .55rem;
+  margin-top: .7rem
+}
+
+.input-values label {
+  font-size: .8rem;
+  display: flex;
+  align-items: center;
+  gap: 6px
+}
+
+/* ---------- layer list ---------- */
+.layer-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.layer-card {
+  width: 85%;
+  margin: 0 auto;
+  background: var(--clr-card);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius);
+  padding: .55rem .8rem;
+  display: flex;
+  flex-direction: column;
+  gap: .55rem;
+}
+
+.layer-card__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center
+}
+
+.layer-card__delete {
+  border: none;
+  background: transparent;
+  color: var(--clr-text);
+  cursor: pointer;
+  font-size: 1.05rem;
+  transition: color .15s, transform .15s
+}
+
+.layer-card__delete:hover {
+  color: #ff6b6b;
+  transform: scale(1.15)
+}
+
+/* stack w / b vertically */
+.param-block {
+  display: flex;
+  flex-direction: column;
+  gap: .55rem;
+  font-size: .8rem
+}
+
+.param-block label {
+  display: flex;
+  align-items: center;
+  gap: 6px
+}
+
+/* ---------- radio group ---------- */
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: .45rem;
+  margin-top: .4rem
+}
+
+.radio-group input[type=radio] {
+  accent-color: var(--clr-accent-dark);
+  width: 14px;
+  height: 14px
+}
+
+.start-btn {
+  margin-top: auto;
+  /* stick to bottom of sidebar */
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--clr-accent);
+  border-radius: var(--radius);
+  background: var(--clr-accent);
+  color: #012218;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .15s, box-shadow .2s;
+}
+
+.start-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--glow);
+}
+
+/* group at bottom of sidebar */
+.run-block {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+/* speed button row */
+.speed-group {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+  color: var(--clr-text);
+}
+
+.speed-group button {
+  width: 32px;
+  height: 28px;
+  border-radius: var(--radius);
+  border: 1px solid var(--clr-accent);
+  background: var(--clr-accent);
+  color: #012218;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .15s, box-shadow .2s;
+}
+
+.speed-group button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--glow);
+}
+
+/* stop button */
+.stop-btn {
+  padding: 0.4rem 0;
+  border: 1px solid #ff6b6b;
+  border-radius: var(--radius);
+  background: #ff6b6b;
+  color: #0a0a0a;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .15s, box-shadow .2s;
+}
+
+.stop-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 6px rgba(255, 107, 107, .45);
+}
+
+
+/* run-block sticks to bottom */
+.run-block {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem
+}
+
+/* speed row */
+.speed-group {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.85rem
+}
+
+.speed-group button {
+  width: 32px;
+  height: 28px;
+  border: 1px solid var(--clr-accent);
+  border-radius: var(--radius);
+  background: var(--clr-accent);
+  color: #012218;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .15s, box-shadow .2s;
+}
+
+.speed-group button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--glow)
+}
+
+/* stop button */
+.stop-btn {
+  padding: 0.4rem 0;
+  border: 1px solid #ff6b6b;
+  border-radius: var(--radius);
+  background: #ff6b6b;
+  color: #0a0a0a;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .15s, box-shadow .2s;
+}
+
+.stop-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 6px rgba(255, 107, 107, .45)
+}
+
+/* ---------------------------------------------------------------
+   Filled green Reset button – identical styling to .start-btn
+---------------------------------------------------------------- */
+.reset-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 0.75rem;
+  width: 100%;
+  /* full‑width bar like Start */
+  padding: 0.55rem 1rem;
+
+  border: none;
+  border-radius: 0.6rem;
+  background: var(--clr-accent);
+  /* same teal‑green */
+  color: #012218;
+  /* dark text (same as Start) */
+
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+
+  transition: transform 0.15s, box-shadow 0.2s;
+}
+
+.reset-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 0 8px rgba(32, 227, 178, 0.45);
+}
+
+.reset-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.reset-btn:disabled {
+  opacity: 0.45;
+  cursor: default;
+  box-shadow: none;
+}
+
+/* ...keep your existing styles ... */
+
+/* make sidebar itself scroll if content is taller than viewport */
+/* .side-menu {
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+  min-width: 250px;
+  background: #0f1925;
+  padding: 1.2rem;
+  overflow-y: auto;
+  position: relative;
+
+  z-index: 10;
+} */
+
+/* --- new reset button matches start -------------------- */
+.reset-btn {
+  width: 100%;
+  margin-top: .9rem;
+  padding: .55rem 1rem;
+  border: 1px solid var(--clr-accent);
+  border-radius: .55rem;
+  font-weight: 600;
+  background: var(--clr-accent);
+  color: #012218;
+  cursor: pointer;
+  transition: transform .15s, box-shadow .2s;
+  margin-bottom: 100px;
+}
+
+.reset-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: var(--glow);
+}
+
+.reset-btn:disabled {
+  opacity: .55;
+  cursor: default;
+}
+
+/* ensure results table never overlaps side‑menu scrollbar */
+.input-values {
+  margin-top: .5rem;
+}
+
+:root {
+  --menu-w: 280px;
+  /* already present in your file */
+  /* … */
+}
+
+/* ✅  New rules */
+/* ── ResultsTable.css  (or the inline style in ResultsTable.jsx) ───────── */
+.results-bar {
+  width: calc(100% - var(--menu-w));
+  /* Leave room for the 280 px menu  */
+  margin-left: var(--menu-w);
+  /* Push the bar to the right       */
+  box-sizing: border-box;
+  max-height: 190px;
+  overflow-y: auto;
+  background: #0f1925;
+  color: #e5f0ff;
+  border-top: 1px solid #28384d;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+  /* never collapse                  */
+}

@@ -1,0 +1,27 @@
+/* ----------------------------------------------
+   VISUALIZER  –  keep the graph in‑bounds
+   ---------------------------------------------- */
+
+/* The flex column to the right of the sidebar */
+.visualizer-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;      /* or whatever canvas colour you like */
+  overflow: auto;           /* scroll if the graph is larger */
+  display: flex;
+  align-items: center;      /* centre the SVG horizontally */
+  justify-content: center;  /*   and vertically (nice for 1‑node nets) */
+}
+
+/* The actual SVG */
+.visualizer-svg {
+  /* Never overflow its parent */
+  max-width: 100%;
+  max-height: 100%;
+  /* Make sure it shrinks when needed while keeping the aspect ratio */
+  width: auto;
+  height: auto;
+  display: block;
+}
+
