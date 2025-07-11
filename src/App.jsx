@@ -148,7 +148,7 @@ export default function App() {
     <div style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
 
       <div style={{ padding: '12px 20px', backgroundColor: '#0f1925', color: '#e5f0ff', fontSize: '1.4rem', fontWeight: 'bold', textAlign: 'center' }}>
-        Neural Network Visualizer by Aakash Nautiyal
+        Neural Network Visualizer
       </div>
 
       <div style={{ display: 'flex', flex: 1, overflow: 'hidden' }}>
